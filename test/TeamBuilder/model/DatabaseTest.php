@@ -15,8 +15,7 @@ class DatabaseTest extends TestCase
     public function __construct()
     {
         parent::__construct();
-
-        $this->database = new Database($_ENV['DB_DSN'], $_ENV['DB_USER_NAME'], $_ENV['DB_USER_PWD']);
+        $this->database = new Database("mysql:host=localhost;dbname=teambuilder","root", "root");
     }
 
     protected function setUp(): void

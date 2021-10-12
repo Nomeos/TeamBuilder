@@ -21,7 +21,7 @@ class Member extends Entity
 
     public function teams(): array
     {
-        return [];
+        $query = "SELECT * FROM members WHERE $column = :id";
     }
 
     /**

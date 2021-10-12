@@ -128,7 +128,7 @@ abstract class Entity
 
     protected static function createDatabase(): Database
     {
-        return new Database($_ENV['DB_DSN'], $_ENV['DB_USER_NAME'], $_ENV['DB_USER_PWD']);
+        return new Database("mysql:host=localhost;dbname=teambuilder","root", "root");
     }
 
     private static function getTableName(): string

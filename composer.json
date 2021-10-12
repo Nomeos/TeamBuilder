@@ -3,8 +3,8 @@
     "autoload": {
         "psr-4": {
             "TeamBuilder\\model\\": [
-                "src/TeamBuilder/model",
-                "test/TeamBuilder/model"
+                "src/model",
+                "test/model"
             ],
             "TeamBuilder\\": [
                 "test/TeamBuilder"
@@ -16,7 +16,7 @@
     },
     "authors": [
         {
-            "name": "Yannick Baudraz",
+            "name": "c",
             "email": "yannick.baudraz@cpnv.ch"
         }
     ],
