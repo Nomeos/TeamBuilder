@@ -16,6 +16,7 @@
     margin: 0;
     overflow: visible;
 
+
     width: auto
 }
 
@@ -25,7 +26,6 @@ main.container {
 
 header.heading {
     color: white;
-    display: block;
     left: 0;
     max-width: 100%;
     right: 0;
@@ -33,9 +33,14 @@ header.heading {
     width: 100%;
     z-index: 1
 }
+header.heading{
+    flex-direction: column;
+    justify-content: center;
+}
 
 header.heading section {
     display: flex;
+
 }
 
 header.heading img {
@@ -43,8 +48,7 @@ header.heading img {
 }
 
 header.heading .exercise-label {
-    margin: auto;
-    margin-left: 2rem
+
 }
 
 header.heading .exercise-title,

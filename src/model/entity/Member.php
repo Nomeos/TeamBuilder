@@ -10,7 +10,6 @@ class Member extends Entity
     //region Fields
 
     protected const TABLE_NAME = 'members';
-
     protected string $name;
     protected string $password;
     protected int    $role_id;
@@ -21,7 +20,9 @@ class Member extends Entity
 
     public function teams(): array
     {
-        $query = "SELECT * FROM members WHERE $column = :id";
+
+        $query = "SELECT teams.id, teams.name, teams.state_id FROM teams INNER JOIN team_member ON team_member.team_id = teams.id INNER JOIN members ON team_member.member_id = members.id WHERE members.id = :id ";
+        return self::createDatabase()->fetchRecords($query, Team::class, ["id" => $this->id]);
     }
 
     /**
@@ -39,4 +40,10 @@ class Member extends Entity
         return self::createDatabase()->fetchRecords($query, Member::class, ["id" => $value]);
     }
     //endregion
+
+    public function moderators(): array
+    {
+        $query = "SELECT m.name, m.id, m.role_id FROM members m INNER JOIN roles ON roles.id = m.role_id WHERE roles.slug = 'MOD' ";
+        return self::createDatabase()->fetchRecords($query, Member::class,[]);
+    }
 }

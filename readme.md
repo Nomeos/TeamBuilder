@@ -1,4 +1,4 @@
-#Autoconnection process
+# Autoconnection process
 
 The Home page requires a connection to a user, so after run all the tests, 
 you will need to change the configuration file that is name "config.php" 

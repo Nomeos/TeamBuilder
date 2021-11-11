@@ -17,6 +17,13 @@ if (isset($_GET['action'])) {
             displayMemberlist();
             break;
         // Permet d'afficher la home de base au lancement du site
+        case 'MyTeams' :
+            displayMyTeamList();
+            break;
+        case 'Moderators' :
+            displayModeratorList();
+            break;
+        // Permet d'afficher la home de base au lancement du site
         default :
             displayHomepage();
     }

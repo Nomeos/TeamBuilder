@@ -1,27 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="view/css/css.css">
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello</title>
-
-
-</head>
-<body>
-<header class="heading managing">
-    <h1 style="text-align: center">WELCOME</h1>
-
-
+<?php
+ob_start();
+?>
+<header class="heading ">
+    <h1 style="text-align: center">List of students</h1>
 </header>
+
 <table>
-    <?php foreach($allMembers as $value): ?>
+
+    <tr>
+        <th>Students</th>
+        <th>Teams</th>
+    </tr>
+    <?php foreach ($allMembers as $member): ?>
         <tr>
-            <td><?= $value->name ?></td>
+            <td><?= $member->name ?></td>
+            <td>
+                <?=
+                implode(',', array_map(function ($team) {
+                        return "<a href='#'>" . $team->name . "</a>";
+                    }
+                        , $member->teams()
+                    )
+                )
+                ?>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
-</body>
-</html>
+<?php
+$contenu = ob_get_clean();
+require "layout.php";

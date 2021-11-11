@@ -1,22 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="view/css/css.css">
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello</title>
+<?php
+ob_start();
+?>
+    <header class="heading managing">
+        <h1 style="text-align: center">WELCOME</h1>
+        <a style="text-align: right">Connected as : <?= $_SESSION["actualMemberConnected"]->name ?></a>
+    </header>
+
+    <div class="container dashboard">
+        <section class="row">
+
+            <div class="column">
+                <a class="button managing column" href="index.php?action=MemberList">List of members</a>
+            </div>
+            <div class="column">
+                <a class="button results column" href="index.php?action=MyTeams">My teams</a>
+            </div>
+            <div class="column">
+                <a class="button results column" href="index.php?action=Moderators">Moderators</a>
+            </div>
+        </section>
+    </div>
+
+<?php
+$contenu = ob_get_clean();
+require "layout.php";
 
 
-</head>
-<body>
-<header class="heading managing">
-    <h1 style="text-align: center">WELCOME</h1>
-    <a style="text-align: right">Connected as : <?= $_SESSION["actualMemberConnected"]->name ?></a>
-</header>
-<div class="container">
-    <a href="index.php?action=MemberList">Yaaaaaaaaahhhhhh</a>
-</div>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

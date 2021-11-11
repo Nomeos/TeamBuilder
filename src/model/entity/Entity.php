@@ -31,7 +31,7 @@ abstract class Entity
     public static function all(): array
     {
         $tableName = self::getTableName();
-        $query = "SELECT * FROM $tableName";
+        $query = "SELECT * FROM $tableName ORDER BY $tableName.name ASC";
 
         return self::createDatabase()->fetchRecords($query, static::class);
     }
