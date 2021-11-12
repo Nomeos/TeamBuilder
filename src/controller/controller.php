@@ -56,5 +56,5 @@ function modifyUserProfile($userid){
     require "view/modifyprofile.php";
 }
 function saveModification($userid){
-
+ //TODO Implémenter la sauvegarde du nom et la gestion des erreurs (connexion a la bd, duplicants etc..)
 }

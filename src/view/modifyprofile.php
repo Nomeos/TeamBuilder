@@ -4,7 +4,8 @@ ob_start();
 
 
     <!-- TODO : Changer la manière d'afficher si l'utilisateur est un captiaine ou un membre,
-    implémenter le changement de nom et la sauvegarde, je voulais mettre un form et envoyer le nom rentré dans le controller-->
+    implémenter le changement de nom et la sauvegarde, je voulais mettre un form et envoyer le nom rentré dans le controller,
+    Vérifier si c'est un modérateur ou l'utilisateur pour changer la méthode d'update-->
     <header class="heading ">
         <h1 style="text-align: center">My profile : <?= $currentUserConnected->name ?></h1>
     </header>
