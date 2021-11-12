@@ -29,7 +29,12 @@ if (isset($_GET['action'])) {
         case 'UserProfil' :
             displayUserProfile($_GET['userid']);
             break;
-
+        case 'ModifyUser':
+            modifyUserProfile($_GET['userid']);
+            break;
+        case 'SaveUser':
+            saveModification($_GET['userid']);
+            break;
         // Permet d'afficher la home de base au lancement du site
         default :
             displayHomepage();

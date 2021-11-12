@@ -48,3 +48,13 @@ function displayUserProfile($userid){
     $currentUserteams = $currentUserConnected->teamMember();
     require "view/myprofile.php";
 }
+function modifyUserProfile($userid){
+    $currentUserConnected = Member::where("id",$userid);
+    $currentUserStatus = $currentUserConnected->status();
+    $currentUserRole = $currentUserConnected->role();
+    $currentUserteams = $currentUserConnected->teamMember();
+    require "view/modifyprofile.php";
+}
+function saveModification($userid){
+
+}

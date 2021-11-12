@@ -1,12 +1,22 @@
 <?php
 ob_start();
 ?>
+
+
+    <!-- TODO : Changer la manière d'afficher si l'utilisateur est un captiaine ou un membre,
+    implémenter le changement de nom et la sauvegarde, je voulais mettre un form et envoyer le nom rentré dans le controller-->
     <header class="heading ">
         <h1 style="text-align: center">My profile : <?= $currentUserConnected->name ?></h1>
     </header>
-    <a>Mon nom : <?= $currentUserConnected->name ?> <br></a>
-    <a>Mon status : <?= $currentUserStatus->name ?></a> <br>
-    <a>Mon rôle : <?= $currentUserRole->name ?></a> <br>
+
+
+    <form action="index.php?action=SaveUser&userid=<?= $currentUserConnected->id ?>">
+        <label for="fname">Mon nom :</label>
+        <a>Mon status : <?= $currentUserStatus->name ?></a> <br>
+        <a>Mon rôle : <?= $currentUserRole->name ?></a> <br>
+        <button type="submit">SAVE</button>
+    </form>
+
 
 <?php if ($currentUserteams != []): ?>
     <?php foreach ($currentUserteams as $team): ?>
@@ -19,8 +29,6 @@ ob_start();
 <?php else: ?>
     <a>Inscrit dans aucune équipe</a>
 <?php endif; ?>
-
-<a href="index.php?action=ModifyUser&userid=<?= $currentUserConnected->id?>" style="background-color: grey; width: 3vh; height: 2vh; color: black">Edition</a>
 
 
 <?php
