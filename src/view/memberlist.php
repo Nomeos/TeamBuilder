@@ -13,7 +13,11 @@ ob_start();
     </tr>
     <?php foreach ($allMembers as $member): ?>
         <tr>
-            <td><?= $member->name ?></td>
+            <?php if($currentUserConnected->role_id === 2) : ?>
+            <td ><a href="index.php?action=UserProfil&userid=<?= $member->id ?>">  <?=$member->name ?></a></td>
+            <?php else :?>
+            <td ><a>  <?=$member->name ?></a></td>
+            <?php endif;?>
             <td>
                 <?=
                 implode(',', array_map(function ($team) {

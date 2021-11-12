@@ -3,7 +3,7 @@ ob_start();
 ?>
     <header class="heading managing">
         <h1 style="text-align: center">WELCOME</h1>
-        <a style="text-align: right">Connected as : <?= $_SESSION["actualMemberConnected"]->name ?></a>
+        <a href="index.php?action=MyProfile" style="text-align: right">Connected as : <?= $_SESSION["actualMemberConnected"]->name ?></a>
     </header>
 
     <div class="container dashboard">

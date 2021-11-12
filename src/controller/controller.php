@@ -14,18 +14,37 @@ function displayHomepage()
     require "view/homepage.php";
 }
 
-function displayMemberList(){
+function displayMemberList()
+{
+    $currentUserConnected = $_SESSION["actualMemberConnected"];
     $allMembers = Member::all();
     require "view/memberlist.php";
 }
 
-function displayMyTeamList(){
-    $myTeams =  $_SESSION["actualMemberConnected"]->teams();
+function displayMyTeamList()
+{
+    $myTeams = $_SESSION["actualMemberConnected"]->teams();
     require "view/myteam.php";
 }
 
-function displayModeratorList(){
+function displayModeratorList()
+{
     $moderators = $_SESSION["actualMemberConnected"]->moderators();
     require "view/moderatorlist.php";
 }
 
+function displayMyProfile()
+{
+    $currentUserConnected = $_SESSION["actualMemberConnected"];
+    $currentUserStatus = $currentUserConnected->status();
+    $currentUserRole = $currentUserConnected->role();
+    $currentUserteams = $currentUserConnected->teamMember();
+    require "view/myprofile.php";
+}
+function displayUserProfile($userid){
+    $currentUserConnected = Member::where("id",$userid);
+    $currentUserStatus = $currentUserConnected->status();
+    $currentUserRole = $currentUserConnected->role();
+    $currentUserteams = $currentUserConnected->teamMember();
+    require "view/myprofile.php";
+}

@@ -23,6 +23,13 @@ if (isset($_GET['action'])) {
         case 'Moderators' :
             displayModeratorList();
             break;
+        case 'MyProfile' :
+            displayMyProfile();
+            break;
+        case 'UserProfil' :
+            displayUserProfile($_GET['userid']);
+            break;
+
         // Permet d'afficher la home de base au lancement du site
         default :
             displayHomepage();
