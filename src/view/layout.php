@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<a href="index.php?action=Home">Version : Début Examen - Mathieu</a>
+<a href="index.php?action=Home">Version : Fin Examen - Mathieu</a>
 <?= $contenu; ?>
 </body>
 </html>
