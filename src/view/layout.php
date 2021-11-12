@@ -12,6 +12,7 @@
 
 </head>
 <body>
+<a>Version : Début Examen - Mathieu</a>
 <?= $contenu; ?>
 </body>
 </html>
